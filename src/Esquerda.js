@@ -1,3 +1,5 @@
+import Topo from './Topo';
+
 export default function Esquerda() {
     return (
         <div class="esquerda">
@@ -63,69 +65,13 @@ function Stories() {
 }
 
 function Posts() {
-    const posts = [{
-        user: {
-            imgProfile: "assets/img/meowed.svg",
-            nickname: "meowed"
-        },
-        content: "assets/img/gato-telefone.svg",
-        likes: {
-            imgLike: "assets/img/respondeai.svg",
-            nameLike: "respondeai",
-            numLikes: "101.523"
-        }
-    }, {
-        user: {
-            imgProfile: "assets/img/barked.svg",
-            nickname: "barked"
-        },
-        content: "assets/img/dog.svg",
-        likes: {
-            imgLike: "assets/img/adorable_animals.svg",
-            nameLike: "adorable_animals",
-            numLikes: "99.159"
-        }
-    }];
+    const posts = [
+        <Post imgPerfil="assets/img/meowed.svg" nickname="meowed" conteudo="assets/img/gato-telefone.svg" imgCurtida="assets/img/respondeai.svg" nomeCurtida="respondeai" numCurtidas="outras 101.523 pessoas" />,
+        <Post imgPerfil="assets/img/barked.svg" nickname="barked" conteudo="assets/img/dog.svg" imgCurtida="assets/img/adorable_animals.svg" nomeCurtida="adorable_animals" numCurtidas="outras 99.159 pessoas" />
+    ]
     return (
         <div class="posts">
-            {posts.map(post => {
-            return (    
-                <div class="post">
-                    <div class="topo">
-                        <div class="usuario">
-                            <img src={post.user.imgProfile} />
-                            {post.user.nickname}
-                        </div>
-                        <div class="acoes">
-                            <ion-icon name="ellipsis-horizontal"></ion-icon>
-                        </div>
-                    </div>
-
-                    <div class="conteudo">
-                        <img src={post.content} />
-                    </div>
-
-                    <div class="fundo">
-                        <div class="acoes">
-                            <div>
-                                <ion-icon name="heart-outline"></ion-icon>
-                                <ion-icon name="chatbubble-outline"></ion-icon>
-                                <ion-icon name="paper-plane-outline"></ion-icon>
-                            </div>
-                            <div>
-                                <ion-icon name="bookmark-outline"></ion-icon>
-                            </div>
-                        </div>
-
-                        <div class="curtidas">
-                            <img src={post.likes.imgLike} />
-                            <div class="texto">
-                                Curtido por <strong>{post.likes.nameLike}</strong> e <strong>outras {post.likes.numLikes} pessoas</strong>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            )
-        })}
-    </div>
-    )}
+            {posts.map(post => post)}
+        </div>
+    )
+}
