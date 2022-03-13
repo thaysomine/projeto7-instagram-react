@@ -1,4 +1,4 @@
-import Topo from './Topo';
+import Post from './Post';
 
 export default function Esquerda() {
     return (
@@ -63,7 +63,6 @@ function Stories() {
         </div>
     );
 }
-
 function Posts() {
     const posts = [
         <Post imgPerfil="assets/img/meowed.svg" nickname="meowed" conteudo="assets/img/gato-telefone.svg" imgCurtida="assets/img/respondeai.svg" nomeCurtida="respondeai" numCurtidas="outras 101.523 pessoas" />,
