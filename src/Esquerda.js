@@ -41,7 +41,6 @@ function Stories() {
         imagem:"assets/img/memeriagourmet.svg",
         usuario:"memeriagourmet"
     }];
-
     return (
         <div class="stories">
             {stories.map(storie => {
@@ -87,7 +86,6 @@ function Posts() {
             numLikes: "99.159"
         }
     }];
-
     return (
         <div class="posts">
             {posts.map(post => {
